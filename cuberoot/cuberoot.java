@@ -10,21 +10,20 @@ public class cuberoot {
     }
 
     public static void cube(int n){
+        double precision = 1e-4;
         double s = 0.0;
         double e = n;
-        while(s<=e){
-            double mid = (s+e)/2;
+        double mid = 0.0;
+        while(e-s > precision){
+            mid = (s+e)/2;
             if(mid *mid * mid > n){
                 e=mid;
             }
             else if(mid * mid * mid < n){
                 s=mid;
             }
-            else{
-                System.out.println("The cube root of "+n+" is "+mid);
-                return;
-            }
         }
+        System.out.println("The cube root of "+n+" is "+mid);
     }
     public static void main(String[] args) {
         int num;
